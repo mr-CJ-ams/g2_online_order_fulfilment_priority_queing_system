@@ -3,8 +3,8 @@
 
 Membership Levels
 
-![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/f54c59a0-7468-4f4c-b119-f1e4b3c44dbd)
-![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/047e8e58-2c2d-421b-af02-c8ee26a389d9)
+![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/b609aa63-2e02-4564-917e-de19be30fe16)
+![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/3bb13e22-09eb-4990-ba20-78977f613bb4)
 
 
 Customers Table
