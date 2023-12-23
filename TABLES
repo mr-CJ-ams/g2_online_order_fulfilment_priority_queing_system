@@ -1,0 +1,69 @@
+CREATE DATABASE `e_order_fulfil`;
+USE `e_order_fulfil`;
+
+
+-- 1. ORDERS TABLE --
+
+CREATE TABLE `e_order_fulfil`.`Orders` (
+    `OrderID` INT(11) NOT NULL AUTO_INCREMENT,
+    `CustomerID` INT(11),
+    `OrderDate` DATETIME,
+    PRIMARY KEY (`OrderID`)
+);
+
+
+-- 2. CUSTOMERS TABLE --
+
+CREATE TABLE `e_order_fulfil`.`Customers` (
+    `CustomerID` INT(11) NOT NULL AUTO_INCREMENT,
+    `TierID` INT(11),
+    `Firstname` VARCHAR(30),
+	`Lastname` VARCHAR(30),
+    `Email` VARCHAR(255),
+    `Contact Number` VARCHAR(13),
+    `Address` VARCHAR(255),
+    PRIMARY KEY (`CustomerID`)
+);
+
+
+-- 3. PRODUCTS TABLE --
+
+CREATE TABLE `e_order_fulfil`.`Products` (
+    `ProductID` INT(11) NOT NULL AUTO_INCREMENT,
+    `Name` VARCHAR(100),
+    `Description` TEXT,
+    `Price` DECIMAL(10, 2),
+    `StockQuantity` INT,
+    PRIMARY KEY (`ProductID`)
+);
+
+-- 4. ORDER_ITEMS TABLE --
+
+CREATE TABLE `e_order_fulfil`.`Order_Items` (
+    `OrderItemID` INT(11) NOT NULL AUTO_INCREMENT,
+    `OrderID` INT(11),
+    `ProductID` INT(11),
+    `Quantity` INT,
+    `UnitPrice` DECIMAL(10, 2),
+    PRIMARY KEY (`OrderItemID`)
+);
+
+-- 5. TIERS TABLE --
+
+CREATE TABLE `e_order_fulfil`.`Tiers` (
+    `TierID` INT(11) NOT NULL AUTO_INCREMENT,
+    `TierName` VARCHAR(100),
+    `EarlyAccessStart` DATETIME,
+    `EarlyAccessEnd` DATETIME,
+    PRIMARY KEY (`TierID`)
+);
+
+-- 6. EXCLUSIVES TABLE --
+
+CREATE TABLE `e_order_fulfil`.`Exclusives` (
+    `ExclusiveID` INT(11) NOT NULL AUTO_INCREMENT,
+    `TierID` INT(11),
+    `ProductID` INT(11),
+    `ExclusiveDescription` TEXT,
+    PRIMARY KEY (`ExclusiveID`)
+);
