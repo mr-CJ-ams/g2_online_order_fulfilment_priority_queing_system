@@ -39,6 +39,7 @@ Orders Table
 
 This query indeed prioritizes the results based on the Membership Level, arranging them from the most prioritized tier to the least prioritized tier.
 
-![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/74bf2301-6d32-4e60-86f7-a3f9e76fb610)
+![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/a849f2f3-0968-4f5a-8491-8dceec1af823)
+
 
 
