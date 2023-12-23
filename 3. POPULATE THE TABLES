@@ -1,0 +1,127 @@
+-- 1. Tiers Table
+
+INSERT INTO `e_order_fulfil`.`Tiers`(`TierID`, `TierName`, `EarlyAccessStart`, `EarlyAccessEnd`)
+VALUES
+	(1, 'Platinum', '2024-01-10 00:00:00', '2024-01-12 23:59:00'),
+	(2, 'Gold', '2024-01-13 00:00:00', '2024-01-15 23:59:00'),
+    (3, 'Silver', '2024-01-16 00:00:00', '2024-01-18 23:59:00'),
+    (4, 'Broze', '2024-01-19 00:00:00', '2024-01-21 23:59:00');
+
+
+
+-- 2. 
+
+INSERT INTO `e_order_fulfil`.`Customers` (`CustomerID`, `TierID`, `FirstName`, `LastName`, `Email`, `Contact Number`, `Address`) 
+VALUES 
+    ('1', '1', 'Carlojead', 'Amaquin', 'carlojead@gmail.com', '+639123456789', 'Panglao, Bohol'),
+    ('2', '2', 'Juwela', 'Tamayo', 'juwela@gmail.com', '+639987654321', 'Danao, Bohol'),
+    ('3', '3', 'Jim Isaac', 'Morgia', 'jimisaac@gmail.com', '+639876543210', 'Balilihan, Bohol'),
+    ('4', '4', 'Stella Maris', 'Sajonia', 'stella@gmail.com', '+639234567890', 'Duero, Bohol'),
+    ('5', '1', 'Ryan', 'Buaquñia', 'ryan@gmail.com', '+639876543210', 'Alburquerque, Bohol'),
+    ('6', '2', 'Mark Angelu', 'Idusma', 'markangelu@gmail.com', '+639345678901', 'Tagbilaran City, Bohol'),
+    ('7', '3', 'Roxan Jean', 'Lastimosa', 'roxan@gmail.com', '+639123456789', 'Tubigon, Bohol'),
+    ('8', '4', 'Ghea Yray', 'Rosales', 'ghea@gmail.com', '+639876543210', 'Trinidad, Bohol'),
+    ('9', '1', 'Paul Andre', 'Tadiar', 'paul@gmail.com', '+639234567890', 'Garcia Hernandez, Bohol'),
+    ('10', '2', 'Mark Justine', 'Corpuz', 'markjustine@gmail.com', '+639345678901', 'Bilar, Bohol'),
+    ('11', '3', 'Rico Mark', 'Naparota', 'rico@gmail.com', '+639123456789', 'Antequera, Bohol'),
+    ('12', '4', 'Ymir Louie', 'Jaspe', 'ymir@gmail.com', '+639234567890', 'Dauis, Bohol'),
+    ('13', '1', 'Jyville', 'Tumamak', 'jyville@gmail.com', '+639345678901', 'Sikatuna, Bohol'),
+    ('14', '2', 'Mabel Dianne', 'Lim', 'mabeldianne@gmail.com', '+639987654321', 'Corella, Bohol'),
+    ('15', '3', 'Kaye Heart', 'Palma', 'kayeheart@gmail.com', '+639876543210', 'Panglao'),
+    ('16', '4', 'Mike', 'Tubiano', 'mike@gmail.com', '+639234567890', 'Dauis, Bohol'),
+    ('17', '1', 'Paolo', 'Tolentino', 'paolo@gmail.com', '+639345678901', 'Dauis, Bohol'),
+    ('18', '2', 'Maria Jeziel', 'Quimpan', 'mj@gmail.com', '+639123456789', 'Catigbian, Bohol'),
+    ('19', '3', 'Josaiah', 'Velasco', 'josaiah@gmail.com', '+639876543210', 'Panglao, Bohol');
+
+
+-- 3.
+
+INSERT INTO `e_order_fulfil`.`Orders` (`OrderID`, `CustomerID`, `OrderDate`)
+VALUES 
+    (1, 1, '2024-01-10 08:30:00'),
+    (2, 5, '2024-01-11 14:45:00'),
+    (3, 9, '2024-01-11 10:00:00'),
+    (4, 13, '2024-01-12 11:20:00'),
+    (5, 17, '2024-01-12 16:00:00'),
+	(6, 2, '2024-01-13 09:15:00'),
+    (7, 6, '2024-01-14 13:30:00'),
+    (8, 10, '2024-01-14 11:00:00'),
+    (9, 14, '2024-01-15 10:45:00'),
+    (10, 18, '2024-01-15 17:20:00'),
+    (11, 3, '2024-01-16 08:00:00'),
+    (12, 7, '2024-01-17 14:30:00'),
+    (13, 11, '2024-01-17 11:45:00'),
+    (14, 15, '2024-01-18 09:20:00'),
+    (15, 19, '2024-01-18 16:10:00'),
+    (16, 4, '2024-01-19 10:00:00'),
+    (17, 8, '2024-01-20 13:30:00'),
+    (18, 12, '2024-01-20 09:45:00'),
+    (19, 16, '2024-01-21 11:20:00');
+
+
+
+
+
+-- 4.
+
+INSERT INTO `e_order_fulfil`.`Products` (`ProductID`, `Name`, `Description`, `Price`, `StockQuantity`)
+VALUES 
+  ('1', 'iPhone 15 Pro Max', 'Top-of-the-line iPhone with A17 Bionic chip, ProMotion display, revamped quad-camera system, and sleek design.', 75990.00, 7),
+  ('2', 'iPad Pro 12.9-inch (6th generation)', 'A powerful tablet with Liquid Retina XDR display and M2 chip for creative professionals.', 59990.00, 5),
+  ('3', 'MacBook Air (M2)', 'A sleek and lightweight laptop with a redesigned chassis, larger display, and M2 chip.', 65990.00, 8),
+  ('4', 'AirPods Pro 2', 'Wireless earbuds with active noise cancellation, transparency mode, and spatial audio.', 15490.00, 15),
+  ('5', 'Apple Watch Series 9', 'A smartwatch with health and fitness tracking features, always-on display, and improved durability.', 26490.00, 12);
+
+
+-- 5.
+
+INSERT INTO `e_order_fulfil`.`Order_Items` (`OrderItemID`, `OrderID`, `ProductID`, `Quantity`, `UnitPrice`)
+VALUES
+	(1, 1, 3, 1, 65990.00),
+    (2, 2, 1, 1, 75990.00),
+    (3, 3, 5, 1, 25990.00),
+    (4, 4, 4, 1, 15490.00),
+    (5, 5, 2, 1, 59990.00),
+    (6, 6, 4, 1, 15490.00),
+    (7, 7, 1, 1, 75990.00),
+    (8, 8, 2, 1, 59990.00),
+    (9, 9, 5, 1, 25990.00),
+    (10, 10, 3, 1, 65990.00),
+    (11, 11, 2, 1, 59990.00),
+    (12, 12, 1, 1, 75990.00),
+    (13, 13, 5, 1, 25990.00),
+    (14, 14, 3, 1, 65990.00),
+    (15, 15, 4, 1, 15490.00),
+    (16, 16, 1, 1, 75990.00),
+    (17, 17, 3, 1, 65990.00),
+    (18, 18, 2, 1, 59990.00),
+    (19, 19, 5, 1, 25990.00);
+
+
+
+
+-- 6.
+
+INSERT INTO `e_order_fulfil`.`Exclusives` (`ExclusiveID`, `TierID`, `ProductID`, `ExclusiveDescription`)
+VALUES 
+	(1, 1, 1, "Designer case crafted from premium materials (leather, exotic skins)"),
+    (2, 1, 2, "Custom-engraved Apple Pencil with personalized message"),
+    (3, 1, 3, "Matching leather sleeve and travel adapter set"),
+    (4, 1, 4, "Wireless charging pad with premium aesthetic"),
+    (5, 1, 5, "Limited-edition band made from high-end materials (titanium, ceramic)"),
+    (6, 2, 1, "High-quality screen protector and camera lens kit"),
+    (7, 2, 2, "Apple Pencil + Procreate app bundle"),
+    (8, 2, 3, "2-year extended warranty with accidental damage protection"),
+    (9, 2, 4, "Custom-engraved charging case"),
+    (10, 2, 5, "Sport loop band in exclusive color not available to the public"),
+    (11, 3, 1, "Fast-charging adapter and durable charging cable"),
+    (12, 3, 2, "Voucher for 3 months of free Apple Music or Apple Arcade"),
+    (13, 3, 3, "Carry case or sleeve in a variety of colors"),
+    (14, 3, 4, "Pair of silicone ear hooks for a secure fit"),
+    (15, 3, 5, "Extra watch band in a different style"),
+    (16, 4, 1, "Voucher for 3 months of Apple TV+"),
+    (17, 4, 2, "Voucher for 3 months of Apple News+"),
+    (18, 4, 3, "Voucher for 3 months of iCloud+"),
+    (19, 4, 4, "Voucher for 3 months of Apple Fitness+"),
+    (20, 4, 5, "Voucher for 3 months of Apple Fitness+");
+
