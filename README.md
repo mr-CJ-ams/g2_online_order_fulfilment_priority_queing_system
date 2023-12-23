@@ -1,6 +1,12 @@
 # g2_online_order_fulfilment_priority_queing_system
 
 
+Membership Levels
+
+![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/f54c59a0-7468-4f4c-b119-f1e4b3c44dbd)
+![image](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/047e8e58-2c2d-421b-af02-c8ee26a389d9)
+
+
 Customers Table
 
 ![Screenshot 2023-12-23 234249](https://github.com/mr-CJ-ams/g2_online_order_fulfilment_priority_queing_system/assets/110215820/4aaff683-7c1b-4699-8488-7e2a3ee5e39d)
