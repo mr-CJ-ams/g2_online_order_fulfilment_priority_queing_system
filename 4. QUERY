@@ -1,0 +1,35 @@
+SELECT
+    `C`.`CustomerID`,
+    CONCAT(`C`.`FirstName`, ' ', `C`.`LastName`) AS `Customers`,
+    `T`.`TierName` AS `Membership Level`,
+    `P`.`Name` AS `Product Ordered`,
+    CASE
+        WHEN `O`.`OrderDate` BETWEEN `T`.`EarlyAccessStart` AND `T`.`EarlyAccessEnd` THEN
+            (SELECT `E`.`ExclusiveDescription`
+            FROM `e_order_fulfil`.`Exclusives` AS `E`
+            WHERE `E`.`TierID` = `T`.`TierID` AND `E`.`ProductID` = `OI`.`ProductID` LIMIT 1)
+        ELSE NULL
+    END AS `Exclusives`,
+    `OI`.`Quantity`,
+    `P`.`Price`,
+    `C`.`Email`,
+    `C`.`Contact Number`,
+    `C`.`Address`
+FROM
+    `e_order_fulfil`.`Customers` AS `C`
+JOIN
+    `e_order_fulfil`.`Orders` AS `O` ON `C`.`CustomerID` = `O`.`CustomerID`
+LEFT JOIN
+    `e_order_fulfil`.`Tiers` AS `T` ON `O`.`OrderDate` BETWEEN `T`.`EarlyAccessStart` AND `T`.`EarlyAccessEnd`
+LEFT JOIN
+    `e_order_fulfil`.`Order_Items` AS `OI` ON `O`.`OrderID` = `OI`.`OrderID`
+LEFT JOIN
+    `e_order_fulfil`.`Products` AS `P` ON `OI`.`ProductID` = `P`.`ProductID`
+ORDER BY
+    CASE `T`.`TierName`
+        WHEN 'Platinum' THEN 1
+        WHEN 'Gold' THEN 2
+        WHEN 'Silver' THEN 3
+        WHEN 'Bronze' THEN 4
+        ELSE 5
+    END;
