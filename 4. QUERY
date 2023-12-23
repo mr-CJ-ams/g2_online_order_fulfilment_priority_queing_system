@@ -9,7 +9,7 @@ SELECT
             FROM `e_order_fulfil`.`Exclusives` AS `E`
             WHERE `E`.`TierID` = `T`.`TierID` AND `E`.`ProductID` = `OI`.`ProductID` LIMIT 1)
         ELSE NULL
-    END AS `Exclusives`,
+    END AS `Exclusive Bonus`,
     `OI`.`Quantity`,
     `P`.`Price`,
     `C`.`Email`,
